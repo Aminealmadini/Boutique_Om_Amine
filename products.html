@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>بوتيك أم أمين | المنتجات</title>
+  <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css?v=20260611-2">
+</head>
+<body data-page="products">
+  <header class="topbar">
+    <button class="icon-btn menu-toggle" aria-label="فتح القائمة">☰</button>
+    <a class="brand" href="index.html"><img src="images/logo.jpg" alt=""><span>بوتيك أم أمين</span></a>
+    <nav class="site-nav">
+      <a href="index.html">الرئيسية</a>
+      <a class="active" href="products.html">المنتجات</a>
+      <a href="offers.html">العروض</a>
+      <a href="history.html">السجل</a>
+      <a href="contact.html">تواصل معنا</a>
+    </nav>
+    <button class="cart-link" data-cart-toggle aria-label="عربة التسوق">🛒<b data-cart-count>0</b></button>
+  </header>
+  <div class="nav-backdrop" data-close-menu></div>
+
+  <main class="shell">
+    <section class="page-title">
+      <h1>معرض المنتجات</h1>
+      <p>فلترة سريعة، صور واضحة، تفاصيل كاملة، وتقييمات الزبونات.</p>
+    </section>
+
+    <section class="filters">
+      <div>
+        <label>نوع المنتوج</label>
+        <div class="chips" id="categoryChips"></div>
+      </div>
+      <div>
+        <label for="priceFilter">الثمن</label>
+        <select id="priceFilter">
+          <option value="all">كل الأثمنة</option>
+          <option value="lt200">أقل من 200 درهم</option>
+          <option value="200-400">بين 200 و 400 درهم</option>
+          <option value="400-500">بين 400 و 500 درهم</option>
+          <option value="gt500">أكثر من 500 درهم</option>
+        </select>
+      </div>
+      <div>
+        <label for="sortFilter">الترتيب</label>
+        <select id="sortFilter">
+          <option value="newest">الوقت: الأحدث</option>
+          <option value="priceAsc">الثمن ↑</option>
+          <option value="priceDesc">الثمن ↓</option>
+          <option value="rating">التقييم</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="grid products-grid" id="productsGrid"></section>
+  </main>
+
+  <aside class="cart-drawer" data-cart-drawer>
+    <button class="icon-btn close-drawer" data-cart-toggle aria-label="إغلاق">×</button>
+    <h3>عربة التسوق</h3>
+    <div data-cart-items></div>
+    <div class="drawer-total"><span>المجموع</span><b><span data-cart-total>0</span> درهم</b></div>
+    <a class="btn primary full" href="cart.html">إتمام الطلب</a>
+  </aside>
+
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal-card product-modal-card">
+      <button class="icon-btn modal-close" data-close-product aria-label="إغلاق">×</button>
+      <div class="product-gallery">
+        <button class="gallery-arrow prev" data-prev-image aria-label="الصورة السابقة">‹</button>
+        <img id="modalImage" src="images/logo.jpg" alt="">
+        <button class="gallery-arrow next" data-next-image aria-label="الصورة التالية">›</button>
+      </div>
+      <div class="modal-info">
+        <span class="tag" id="modalCategory"></span>
+        <h2 id="modalTitle"></h2>
+        <div class="price-line" id="modalPrice"></div>
+        <p id="modalDesc"></p>
+        <div class="option-block"><h4>الألوان المتوفرة</h4><div class="swatches" id="modalColors"></div></div>
+        <div class="option-block"><h4>الأحجام المتوفرة</h4><div class="swatches" id="modalSizes"></div></div>
+        <div class="option-block"><h4>تقييم الجمهور</h4><div class="rating-summary" id="ratingSummary"></div><div class="rating-actions" id="ratingStars"></div></div>
+        <button class="btn primary full" id="modalAdd">إضافة لعربة التسوق</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="choiceModal" aria-hidden="true">
+    <div class="modal-card choice-card">
+      <h3>اختاري تفاصيل المنتج</h3>
+      <p id="choiceIntro"></p>
+      <div class="choice-section" id="colorChoiceSection">
+        <label>اللون</label>
+        <div class="color-carousel" id="colorCarousel"></div>
+      </div>
+      <div class="choice-section" id="sizeChoiceSection">
+        <label for="sizeChoice">الحجم</label>
+        <select id="sizeChoice"></select>
+      </div>
+      <div class="choice-error" id="choiceError"></div>
+      <div class="choice-actions">
+        <button class="btn primary" id="confirmChoice">تأكيد</button>
+        <button class="btn soft" id="cancelChoice">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>بوتيك أم أمين - جميع الحقوق محفوظة © 2026</footer>
+  <script src="site.js?v=20260611-2"></script>
+</body>
+</html>

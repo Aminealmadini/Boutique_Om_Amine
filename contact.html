@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>بوتيك أم أمين | تواصل معنا</title>
+  <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css?v=20260611-2">
+</head>
+<body data-page="contact">
+  <header class="topbar">
+    <button class="icon-btn menu-toggle" aria-label="فتح القائمة">☰</button>
+    <a class="brand" href="index.html"><img src="images/logo.jpg" alt=""><span>بوتيك أم أمين</span></a>
+    <nav class="site-nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="products.html">المنتجات</a>
+      <a href="offers.html">العروض</a>
+      <a href="history.html">السجل</a>
+      <a class="active" href="contact.html">تواصل معنا</a>
+    </nav>
+    <button class="cart-link" data-cart-toggle aria-label="عربة التسوق">🛒<b data-cart-count>0</b></button>
+  </header>
+  <div class="nav-backdrop" data-close-menu></div>
+  <main class="shell contact-layout">
+    <section class="page-title">
+      <h1>تواصلي معنا</h1>
+      <p>أي رسالة كتوصّل مباشرة لصندوق الرسائل داخل صفحة الإدارة.</p>
+    </section>
+    <section class="panel">
+      <form id="contactForm">
+        <label>الاسم الكامل<input id="contactName" required></label>
+        <label>الهاتف<input id="contactPhone" inputmode="tel"></label>
+        <label>الموضوع<input id="contactSubject" required></label>
+        <label>الرسالة<textarea id="contactMessage" rows="5" required></textarea></label>
+        <button class="btn primary full" type="submit">إرسال الرسالة</button>
+      </form>
+    </section>
+  </main>
+  <aside class="cart-drawer" data-cart-drawer>
+    <button class="icon-btn close-drawer" data-cart-toggle aria-label="إغلاق">×</button>
+    <h3>عربة التسوق</h3>
+    <div data-cart-items></div>
+    <div class="drawer-total"><span>المجموع</span><b><span data-cart-total>0</span> درهم</b></div>
+    <a class="btn primary full" href="cart.html">إتمام الطلب</a>
+  </aside>
+  <footer>بوتيك أم أمين - جميع الحقوق محفوظة © 2026</footer>
+  <script src="site.js?v=20260611-2"></script>
+</body>
+</html>

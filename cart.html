@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>بوتيك أم أمين | عربة التسوق</title>
+  <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css?v=20260611-2">
+</head>
+<body data-page="cart">
+  <header class="topbar">
+    <button class="icon-btn menu-toggle" aria-label="فتح القائمة">☰</button>
+    <a class="brand" href="index.html"><img src="images/logo.jpg" alt=""><span>بوتيك أم أمين</span></a>
+    <nav class="site-nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="products.html">المنتجات</a>
+      <a href="offers.html">العروض</a>
+      <a href="history.html">السجل</a>
+      <a href="contact.html">تواصل معنا</a>
+    </nav>
+    <a class="cart-link active" href="cart.html" aria-label="عربة التسوق">🛒<b data-cart-count>0</b></a>
+  </header>
+  <div class="nav-backdrop" data-close-menu></div>
+  <main class="shell checkout-layout">
+    <section class="panel">
+      <h1>عربة التسوق</h1>
+      <div id="cartPageItems"></div>
+      <div class="summary-line"><span>رسوم التوصيل</span><b>40 درهم</b></div>
+      <div class="summary-line total"><span>المجموع الإجمالي</span><b><span id="finalTotal">0</span> درهم</b></div>
+    </section>
+    <section class="panel">
+      <h2>معلومات التوصيل</h2>
+      <form id="checkoutForm">
+        <div class="form-grid">
+          <label>الاسم الكامل بالعربية<input id="nameAR" required></label>
+          <label>الاسم بالفرنسية<input id="nameFR"></label>
+          <label>الهاتف<input id="phone" inputmode="tel" required></label>
+          <label>المدينة
+            <div class="city-picker" id="cityPicker">
+              <button type="button" id="cityButton">اختاري المدينة</button>
+              <div class="city-menu">
+                <div class="city-search"><input id="citySearch" placeholder="بحث عن المدينة"></div>
+                <div class="city-list" id="cityList"></div>
+              </div>
+            </div>
+            <input type="hidden" id="city" required>
+            <small id="cityHint">اختاري مدينة مدعومة من Ozone Express.</small>
+          </label>
+          <label class="wide">العنوان الكامل<textarea id="address" rows="3" required></textarea></label>
+        </div>
+        <p class="pay-note">الدفع عند الاستلام. رسوم التوصيل: 40 درهم.</p>
+        <button class="btn primary full" type="submit">تأكيد الطلب</button>
+      </form>
+    </section>
+  </main>
+  <footer>بوتيك أم أمين - جميع الحقوق محفوظة © 2026</footer>
+  <script src="site.js?v=20260611-2"></script>
+</body>
+</html>

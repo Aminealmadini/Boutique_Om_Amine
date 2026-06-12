@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>بوتيك أم أمين | لوحة الإدارة</title>
+  <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css?v=20260612-1">
+</head>
+<body data-page="admin">
+  <main class="admin-page">
+    <section class="login-card" id="loginCard">
+      <img src="images/logo.jpg" alt="بوتيك أم أمين">
+      <h1>لوحة الإدارة</h1>
+      <label>كلمة المرور
+        <input id="adminPassword" type="password" autocomplete="current-password">
+      </label>
+      <label class="check-row">
+        <input id="rememberAdmin" type="checkbox">
+        <span>احفظ تسجيلي على هذا الجهاز</span>
+      </label>
+      <button class="btn primary full" id="loginBtn" type="button">دخول</button>
+      <p class="form-error" id="loginError"></p>
+    </section>
+
+    <section class="admin-app" id="adminApp" hidden>
+      <aside class="admin-sidebar" id="adminSidebar">
+        <div class="admin-brand">
+          <img src="images/logo.jpg" alt="">
+          <div><b>بوتيك أم أمين</b><small>لوحة التحكم</small></div>
+        </div>
+        <button class="admin-tab active" data-admin-tab="products">المنتجات <span class="badge-dot" data-badge="products"></span></button>
+        <button class="admin-tab" data-admin-tab="orders">الطلبيات <span class="badge-dot" data-badge="orders"></span></button>
+        <button class="admin-tab" data-admin-tab="ordersLog">سجل الطلبات</button>
+        <button class="admin-tab" data-admin-tab="messages">صندوق الرسائل <span class="badge-dot" data-badge="messages"></span></button>
+        <button class="admin-tab" data-admin-tab="home">تعديل الرئيسية</button>
+        <button class="admin-tab" data-admin-tab="settings">الإعدادات</button>
+        <a class="btn soft full" href="index.html">معاينة الموقع</a>
+        <button class="btn danger full" id="logoutBtn" type="button">خروج</button>
+      </aside>
+
+      <div class="admin-main">
+        <header class="admin-top">
+          <button class="icon-btn admin-menu-toggle" id="adminMenuToggle" type="button" aria-label="فتح القائمة">☰</button>
+          <div class="admin-title">
+            <h1 id="adminTitle">المنتجات</h1>
+            <p id="adminClock"></p>
+          </div>
+          <button class="btn primary" id="addProductBtn" type="button">إضافة منتج</button>
+        </header>
+        <section id="adminContent"></section>
+      </div>
+      <div class="nav-backdrop" id="adminBackdrop"></div>
+    </section>
+  </main>
+
+  <div class="modal" id="adminProductModal" aria-hidden="true">
+    <form class="modal-card admin-product-card" id="productForm">
+      <button class="icon-btn modal-close" id="closeProductForm" type="button" aria-label="إغلاق">×</button>
+      <h2 id="productFormTitle">إضافة منتج</h2>
+      <div class="form-grid">
+        <label>اسم المنتج<input id="pName" required></label>
+        <label>نوع المنتوج
+          <select id="pCategory">
+            <option>عبائات</option>
+            <option>فولارات</option>
+            <option>إكسسوارات</option>
+            <option>الخمارات و النقابات</option>
+          </select>
+        </label>
+        <label>الثمن<input id="pPrice" type="number" min="0" required></label>
+        <label>الثمن القديم للعرض<input id="pOldPrice" type="number" min="0" placeholder="اختياري"></label>
+        <label class="wide">الوصف<textarea id="pDesc" rows="3"></textarea></label>
+        <label class="wide">إرفع الصور<input id="pImages" type="file" accept="image/*" multiple></label>
+        <div class="image-preview-list wide" id="imagePreviewList"></div>
+        <label class="check-row wide"><input id="pColorEnabled" type="checkbox"><span>يمكن اختيار اللون</span></label>
+        <section class="option-editor wide" id="colorEditor" hidden>
+          <div class="editor-head"><b>الألوان حسب ترتيب الصور</b><button class="btn soft" id="autoColorsBtn" type="button">لون لكل صورة</button></div>
+          <div id="colorRows"></div>
+          <button class="btn soft" id="addColorBtn" type="button">إضافة لون</button>
+        </section>
+        <label class="check-row wide"><input id="pSizeEnabled" type="checkbox"><span>يمكن اختيار الأحجام</span></label>
+        <section class="option-editor wide" id="sizeEditor" hidden>
+          <div id="sizeRows"></div>
+          <button class="btn soft" id="addSizeBtn" type="button">إضافة حجم</button>
+        </section>
+      </div>
+      <div class="choice-actions">
+        <button class="btn primary" type="submit">حفظ</button>
+        <button class="btn danger" id="deleteProductBtn" type="button">حذف</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="site.js?v=20260612-2"></script>
+</body>
+</html>
